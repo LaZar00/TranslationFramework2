@@ -9,7 +9,7 @@ namespace TFGame.Yakuza0
     public class Game : YakuzaGame.Game
     {
         public override string Id => "193b8191-39e2-4ad7-b0bf-9cb413bb910f";
-        public override string Name => "Yakuza 0";
+        public override string Name => "Yakuza 0 (STEAM)";
         public override string Description => "Build Id: 3642285";
 
         public override Image Icon =>
@@ -529,6 +529,28 @@ namespace TFGame.Yakuza0
             return reactor;
         }
 
+        private GameFileContainer GetScenario()
+        {
+            var search =
+                new GameFileSearch
+                {
+                    RelativePath = ".",
+                    SearchPattern = "scenario2.*",
+                    IsWildcard = true,
+                    RecursiveSearch = false,
+                    FileType = typeof(YakuzaGame.Files.Scenario.File)
+                };
+
+            var scenario = new GameFileContainer
+            {
+                Path = @"media\data\scenario",
+                Type = ContainerType.Folder
+            };
+
+            scenario.FileSearches.Add(search);
+            return scenario;
+        }
+
         private GameFileContainer GetSoundpar()
         {
             var mfpSearch =
@@ -823,6 +845,7 @@ namespace TFGame.Yakuza0
             result.AddRange(GetMinigame());
             result.AddRange(GetPause());
             result.Add(GetReactorpar());
+            result.Add(GetScenario());
             result.Add(GetSoundpar());
             result.Add(GetStage());
             result.Add(GetStaypar());

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.352
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TF.IO", "TF.IO\TF.IO.csproj", "{4F0D7226-FA20-4FE3-A523-336702654E02}"
 EndProject
@@ -66,6 +66,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoveEsquireVnTextBuilder", "ExternalTools\LoveEsquireVnTextBuilder\LoveEsquireVnTextBuilder.csproj", "{CCBA43EB-7710-4E68-A3DD-BB48E0A73BDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFGame.NightCry", "Plugins\TFGame.NightCry\TFGame.NightCry.csproj", "{9EA6A553-117A-452C-981A-57198EA2396B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFGame.Yakuza0GOG", "Plugins\TFGame.Yakuza0GOG\TFGame.Yakuza0GOG.csproj", "{8F3D5335-0819-4CFB-A4A8-285519F3FA66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -425,6 +427,18 @@ Global
 		{9EA6A553-117A-452C-981A-57198EA2396B}.Release|x64.Build.0 = Release|Any CPU
 		{9EA6A553-117A-452C-981A-57198EA2396B}.Release|x86.ActiveCfg = Release|Any CPU
 		{9EA6A553-117A-452C-981A-57198EA2396B}.Release|x86.Build.0 = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|x64.Build.0 = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -456,6 +470,7 @@ Global
 		{938FB146-8FCA-4DDD-8111-2D60F2BF6239} = {B4EF83D1-7D6F-449E-8FC3-46AE381039D1}
 		{CCBA43EB-7710-4E68-A3DD-BB48E0A73BDF} = {7E18623E-5F2C-435F-AB6C-297273CE7CB0}
 		{9EA6A553-117A-452C-981A-57198EA2396B} = {B4EF83D1-7D6F-449E-8FC3-46AE381039D1}
+		{8F3D5335-0819-4CFB-A4A8-285519F3FA66} = {B4EF83D1-7D6F-449E-8FC3-46AE381039D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7517169-6658-41AC-B87B-9257549EFB51}
