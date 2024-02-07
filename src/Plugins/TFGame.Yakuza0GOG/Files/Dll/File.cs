@@ -12,7 +12,7 @@ namespace TFGame.Yakuza0GOG.Files.Dll
         {
             new Tuple<long, long>(0x15A3C8, 0x15C2E8),
             new Tuple<long, long>(0x165FE0, 0x16DB90),
-            new Tuple<long, long>(0x175130, 0x1936C8),
+            new Tuple<long, long>(0x175130, 0x1936C9),
         };
 
         public File(string gameName, string path, string changesFolder, System.Text.Encoding encoding) : base(gameName, path, changesFolder, encoding)
