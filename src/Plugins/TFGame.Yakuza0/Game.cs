@@ -538,7 +538,7 @@ namespace TFGame.Yakuza0
                     SearchPattern = "scenario2.*",
                     IsWildcard = true,
                     RecursiveSearch = false,
-                    FileType = typeof(YakuzaGame.Files.Scenario.File)
+                    FileType = typeof(YakuzaGame.Files.ScenarY0.File)
                 };
 
             var scenario = new GameFileContainer
