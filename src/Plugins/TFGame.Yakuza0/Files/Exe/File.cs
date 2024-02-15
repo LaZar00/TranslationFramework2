@@ -58,6 +58,18 @@ namespace TFGame.Yakuza0.Files.Exe
                     new Tuple<long, byte[]>(0xEBCC28, new byte[] {0x25, 0x73, 0x5C})
                 },
             },
+
+            // Buscar el primer "GET" (en mayúsculas).
+            new ExePatch
+            {
+                Name = "Traducir palabras sencillas directas",
+                Description = "Con esta opción se traducen palabras directas como GET (se usa en los combates de Miss Tatsu p.ej.)",
+                Enabled = false,
+                Patches = new List<Tuple<long, byte[]>>
+                {
+                    new Tuple<long, byte[]>(0xE1E5B8, new byte[] {0x43, 0x4F, 0x47, 0x45, 0x53})
+                },
+            },
         };
 
         public File(string gameName, string path, string changesFolder, System.Text.Encoding encoding) : base(gameName, path, changesFolder, encoding)
