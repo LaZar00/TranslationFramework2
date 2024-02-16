@@ -59,15 +59,16 @@ namespace TFGame.Yakuza0.Files.Exe
                 },
             },
 
-            // Buscar el primer "GET" (en mayúsculas).
+            // Buscar el primer "GET"/"LOST" (en mayúsculas).
             new ExePatch
             {
                 Name = "Traducir palabras sencillas directas",
-                Description = "Con esta opción se traducen palabras directas como GET (se usa en los combates de Miss Tatsu p.ej.)",
+                Description = "Con esta opción se traducen palabras directas como GET/LOST (se usa en los combates de Miss Tatsu p.ej.)",
                 Enabled = false,
                 Patches = new List<Tuple<long, byte[]>>
                 {
-                    new Tuple<long, byte[]>(0xE1E5B8, new byte[] {0x43, 0x4F, 0x47, 0x45, 0x53})
+                    new Tuple<long, byte[]>(0xE1E5B8, new byte[] {0x43, 0x4F, 0x47, 0x45, 0x53}),   // GET (COGES)
+                    new Tuple<long, byte[]>(0xEB241C, new byte[] {0x50, 0x49, 0x45, 0x52, 0x44, 0x45, 0x53})    // LOST (PIERDES)
                 },
             },
         };
