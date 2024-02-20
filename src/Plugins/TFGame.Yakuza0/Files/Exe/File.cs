@@ -19,6 +19,9 @@ namespace TFGame.Yakuza0.Files.Exe
             new Tuple<long, long>(0xDCA2D8, 0xDCD6B0),
             new Tuple<long, long>(0xDD0508, 0xDD4200),
             new Tuple<long, long>(0xE898D8, 0xEA4D40),
+            new Tuple<long, long>(0xDC9138, 0xDC9170),  // Windowed / Borderless / Fullscreen
+            new Tuple<long, long>(0xD693EC, 0xD693EC),  // Custom
+            new Tuple<long, long>(0xDC9770, 0xDC97A0),  // Enabled / Off / Disabled
         };
 
         protected override List<ExePatch> Patches => new List<ExePatch>()
