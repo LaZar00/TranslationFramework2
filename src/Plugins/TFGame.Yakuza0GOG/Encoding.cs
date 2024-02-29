@@ -35,6 +35,7 @@ namespace TFGame.Yakuza0GOG
                 //new Tuple<string, string>("^", "%"),
                 new Tuple<string, string>("®", "\u007F"),
                 new Tuple<string, string>("¥", "\\"),
+                new Tuple<string, string>("\u2605", "¢"), // Estrella
                 new Tuple<string, string>("\u266A", "¤"), // Nota musical
                 new Tuple<string, string>("\u2665", "§"), // Corazón
                 new Tuple<string, string>("\u221E", "\u00B8"), // Infinito
@@ -91,6 +92,7 @@ namespace TFGame.Yakuza0GOG
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x31 }, new byte[] { 0xE2, 0x96, 0xB3 });
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x32 }, new byte[] { 0xE2, 0x97, 0x8B });
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x33 }, new byte[] { 0xE2, 0x96, 0xA1 });
+            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x34 }, new byte[] { 0xE2, 0x98, 0x85 });
 
             return result;
         }
