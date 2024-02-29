@@ -16,12 +16,12 @@ namespace TFGame.Yakuza0.Files.Exe
             new Tuple<long, long>(0xD2A740, 0xD2A740),
             new Tuple<long, long>(0xD2C658, 0xD2D520),
             new Tuple<long, long>(0xD2F9E8, 0xD2FA80),
+            new Tuple<long, long>(0xD693EC, 0xD693EC),  // Custom
+            new Tuple<long, long>(0xDC9138, 0xDC9170),  // Windowed / Borderless / Fullscreen
+            new Tuple<long, long>(0xDC9770, 0xDC97A0),  // Enabled / Off / Disabled
             new Tuple<long, long>(0xDCA2D8, 0xDCD6B0),
             new Tuple<long, long>(0xDD0508, 0xDD4200),
             new Tuple<long, long>(0xE898D8, 0xEA4D40),
-            new Tuple<long, long>(0xDC9138, 0xDC9170),  // Windowed / Borderless / Fullscreen
-            new Tuple<long, long>(0xD693EC, 0xD693EC),  // Custom
-            new Tuple<long, long>(0xDC9770, 0xDC97A0),  // Enabled / Off / Disabled
         };
 
         protected override List<ExePatch> Patches => new List<ExePatch>()
@@ -70,8 +70,10 @@ namespace TFGame.Yakuza0.Files.Exe
                 Enabled = false,
                 Patches = new List<Tuple<long, byte[]>>
                 {
-                    new Tuple<long, byte[]>(0xE1E5B8, new byte[] {0x43, 0x4F, 0x47, 0x45, 0x53}),   // GET (COGES)
-                    new Tuple<long, byte[]>(0xEB241C, new byte[] {0x50, 0x49, 0x45, 0x52, 0x44, 0x45, 0x53})    // LOST (PIERDES)
+                    new Tuple<long, byte[]>(0xE1E5B8, new byte[] {(byte)'C', (byte)'O', (byte)'G', (byte)'E', (byte)'S'}),   // GET (COGES)
+                    new Tuple<long, byte[]>(0xEB241C, new byte[] {(byte)'P', (byte)'I', (byte)'E', (byte)'R', (byte)'D', (byte)'E', (byte)'S'}),    // LOST (PIERDES)
+                    new Tuple<long, byte[]>(0xE0C468, new byte[] {(byte)'N', (byte)'V'}),   // LV (NV)
+                    new Tuple<long, byte[]>(0xE0C498, new byte[] {(byte)'I', (byte)'n', (byte)'f', (byte)'o', (byte)'r', (byte)'m', (byte)'a', (byte)'c', (byte)'i', (byte)'ó', (byte)'n' }),  // Information
                 },
             },
         };

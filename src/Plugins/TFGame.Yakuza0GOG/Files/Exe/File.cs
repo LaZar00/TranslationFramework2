@@ -19,12 +19,12 @@ namespace TFGame.Yakuza0GOG.Files.Exe
             new Tuple<long, long>(0xCE34B0, 0xCE34B0),
             new Tuple<long, long>(0xCE5380, 0xCE6250),
             new Tuple<long, long>(0xCE8740, 0xCE87E0),
+            new Tuple<long, long>(0xD2202C, 0xD2202C),  // Custom
+            new Tuple<long, long>(0xD81F78, 0xD81FB0),  // Windowed / Borderless / Fullscreen
+            new Tuple<long, long>(0xD825B0, 0xD825E0),  // Enabled / Off / Disabled
             new Tuple<long, long>(0xD83110, 0xD864C8),
             new Tuple<long, long>(0xD892F8, 0xD8CFF0),
             new Tuple<long, long>(0xE406D8, 0xE5BB40),
-            new Tuple<long, long>(0xD81F78, 0xD81FB0),  // Windowed / Borderless / Fullscreen
-            new Tuple<long, long>(0xD2202C, 0xD2202C),  // Custom
-            new Tuple<long, long>(0xD825B0, 0xD825E0),  // Enabled / Off / Disabled
         };
 
         protected override List<ExePatch> Patches => new List<ExePatch>()
@@ -65,7 +65,7 @@ namespace TFGame.Yakuza0GOG.Files.Exe
                 },
             },
 
-            // Buscar el primer "GET"/"LOST" (en mayúsculas).
+            // Buscar el primer "GET"/"LOST"/"LV"/"Information".
             new ExePatch
             {
                 Name = "Traducir palabras sencillas directas",
@@ -73,8 +73,10 @@ namespace TFGame.Yakuza0GOG.Files.Exe
                 Enabled = false,
                 Patches = new List<Tuple<long, byte[]>>
                 {
-                    new Tuple<long, byte[]>(0xDD73C8, new byte[] {0x43, 0x4F, 0x47, 0x45, 0x53}),   // GET (COGES)
-                    new Tuple<long, byte[]>(0xE69424, new byte[] {0x50, 0x49, 0x45, 0x52, 0x44, 0x45, 0x53})    // LOST (PIERDES)
+                    new Tuple<long, byte[]>(0xDD73C8, new byte[] {(byte)'C', (byte)'O', (byte)'G', (byte)'E', (byte)'S'}),   // GET (COGES)
+                    new Tuple<long, byte[]>(0xE69424, new byte[] {(byte)'P', (byte)'I', (byte)'E', (byte)'R', (byte)'D', (byte)'E', (byte)'S'}),    // LOST (PIERDES)
+                    new Tuple<long, byte[]>(0xDC5308, new byte[] {(byte)'N', (byte)'V'}),   // LV (NV)
+                    new Tuple<long, byte[]>(0xDC5338, new byte[] {(byte)'I', (byte)'n', (byte)'f', (byte)'o', (byte)'r', (byte)'m', (byte)'a', (byte)'c', (byte)'i', (byte)'ó', (byte)'n' }),  // Information
                 },
             },
         };
