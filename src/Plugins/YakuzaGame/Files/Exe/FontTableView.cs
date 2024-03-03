@@ -50,7 +50,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue0",
                 HeaderText = "TopLeft",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle {Alignment = DataGridViewContentAlignment.MiddleRight},
                 Increment = new decimal(new [] {1, 0, 0, 131072}),
                 Maximum = new decimal(new [] {2, 0, 0, 0}),
@@ -63,7 +63,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue1",
                 HeaderText = "TopRight",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight },
                 Increment = new decimal(new[] { 1, 0, 0, 131072 }),
                 Maximum = new decimal(new[] { 2, 0, 0, 0 }),
@@ -76,7 +76,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue2",
                 HeaderText = "MiddleLeft",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight },
                 Increment = new decimal(new[] { 1, 0, 0, 131072 }),
                 Maximum = new decimal(new[] { 2, 0, 0, 0 }),
@@ -89,7 +89,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue3",
                 HeaderText = "MiddleRight",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight },
                 Increment = new decimal(new[] { 1, 0, 0, 131072 }),
                 Maximum = new decimal(new[] { 2, 0, 0, 0 }),
@@ -102,7 +102,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue4",
                 HeaderText = "BottomLeft",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight },
                 Increment = new decimal(new[] { 1, 0, 0, 131072 }),
                 Maximum = new decimal(new[] { 2, 0, 0, 0 }),
@@ -115,7 +115,7 @@ namespace YakuzaGame.Files.Exe
             {
                 Name = "colValue5",
                 HeaderText = "BottomRight",
-                DecimalPlaces = 3,
+                DecimalPlaces = 5,
                 DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight },
                 Increment = new decimal(new[] { 1, 0, 0, 131072 }),
                 Maximum = new decimal(new[] { 2, 0, 0, 0 }),
@@ -236,22 +236,22 @@ namespace YakuzaGame.Files.Exe
 
                 if (imgBox.Name == "imgBoxOriginalChar")
                 {
-                    valor0 = (0.5f + _data[index].OriginalData[0]) * 0.333f * imgBox.Width;
-                    valor1 = imgBox.Width - (0.5f + _data[index].OriginalData[1]) * 0.333f * imgBox.Width;
-                    valor2 = (0.5f + _data[index].OriginalData[2]) * 0.333f * imgBox.Width;
-                    valor3 = imgBox.Width - (0.5f + _data[index].OriginalData[3]) * 0.333f * imgBox.Width;
-                    valor4 = (0.5f + _data[index].OriginalData[4]) * 0.333f * imgBox.Width;
-                    valor5 = imgBox.Width - (0.5f + _data[index].OriginalData[5]) * 0.333f * imgBox.Width;
+                    valor0 = (0.5f + _data[index].OriginalData[0]) * 0.333f * imgBox.ClientSize.Width;
+                    valor1 = imgBox.ClientSize.Width - (0.5f + _data[index].OriginalData[1]) * 0.333f * imgBox.ClientSize.Width;
+                    valor2 = (0.5f + _data[index].OriginalData[2]) * 0.333f * imgBox.ClientSize.Width;
+                    valor3 = imgBox.ClientSize.Width - (0.5f + _data[index].OriginalData[3]) * 0.333f * imgBox.ClientSize.Width;
+                    valor4 = (0.5f + _data[index].OriginalData[4]) * 0.333f * imgBox.ClientSize.Width;
+                    valor5 = imgBox.ClientSize.Width - (0.5f + _data[index].OriginalData[5]) * 0.333f * imgBox.ClientSize.Width;
                 }
 
                 if (imgBox.Name == "imgBoxNewChar")
                 {
-                    valor0 = (0.5f + _data[index].Data[0]) * 0.333f * imgBox.Width;
-                    valor1 = imgBox.Width - (0.5f + _data[index].Data[1]) * 0.333f * imgBox.Width;
-                    valor2 = (0.5f + _data[index].Data[2]) * 0.333f * imgBox.Width;
-                    valor3 = imgBox.Width - (0.5f + _data[index].Data[3]) * 0.333f * imgBox.Width;
-                    valor4 = (0.5f + _data[index].Data[4]) * 0.333f * imgBox.Width;
-                    valor5 = imgBox.Width - (0.5f + _data[index].Data[5]) * 0.333f * imgBox.Width;
+                    valor0 = (0.5f + _data[index].Data[0]) * 0.333f * imgBox.ClientSize.Width;
+                    valor1 = imgBox.ClientSize.Width - (0.5f + _data[index].Data[1]) * 0.333f * imgBox.ClientSize.Width;
+                    valor2 = (0.5f + _data[index].Data[2]) * 0.333f * imgBox.ClientSize.Width;
+                    valor3 = imgBox.ClientSize.Width - (0.5f + _data[index].Data[3]) * 0.333f * imgBox.ClientSize.Width;
+                    valor4 = (0.5f + _data[index].Data[4]) * 0.333f * imgBox.ClientSize.Width;
+                    valor5 = imgBox.ClientSize.Width - (0.5f + _data[index].Data[5]) * 0.333f * imgBox.ClientSize.Width;
                 }
                 
                 using (var pen = new Pen(Color.Yellow, 1))
@@ -469,7 +469,23 @@ namespace YakuzaGame.Files.Exe
 
             if (index >= 0)
             {
-                _data[e.RowIndex][index] = 1.0f - Convert.ToSingle(e.Value);
+
+                _data[e.RowIndex][index] = Convert.ToSingle(e.Value);
+
+                //if (Convert.ToSingle(e.Value) >= 0.0f && Convert.ToSingle(e.Value) <= 1.0f)
+                //{
+                //    _data[e.RowIndex][index] = 1.0f - Convert.ToSingle(e.Value);
+                //}
+                //else if (Convert.ToSingle(e.Value) < 0.0f)
+                //{
+                //    _data[e.RowIndex][index] = (Convert.ToSingle(e.Value) - 1.0f) * -1;
+                //}
+                //else if (Convert.ToSingle(e.Value) > 1.0f)
+                //{
+                //    _data[e.RowIndex][index] = (Convert.ToSingle(e.Value) + 1.0f) * -1;
+                //}
+
+                // _data[e.RowIndex][index] = 1.0f - Convert.ToSingle(e.Value);
             }
         }
 
@@ -491,14 +507,30 @@ namespace YakuzaGame.Files.Exe
 
             if (index >= 0)
             {
-                e.Value = 1.0f - _data[e.RowIndex][index];
-                return;
+                e.Value = _data[e.RowIndex][index];
+
+                //if (Convert.ToSingle(_data[e.RowIndex][index]) >= 0.0f && Convert.ToSingle(e.Value) <= 1.0f)
+                //{
+                //    e.Value = 1.0f - _data[e.RowIndex][index];
+                //}
+                //else if (Convert.ToSingle(_data[e.RowIndex][index]) < 0.0f)
+                //{
+                //    e.Value = 1.0f + (_data[e.RowIndex][index] * -1);
+                //}
+                //else if (Convert.ToSingle(_data[e.RowIndex][index]) > 1.0f)
+                //{
+                //    e.Value = (_data[e.RowIndex][index] * -1) - 1.0f;
+                //}
+
+                //e.Value = 1.0f - _data[e.RowIndex][index];
             }
         }
 
         private void btnAutoAdjust_Click(object sender, EventArgs e)
         {
-            const int pixelsSpace = 2;
+            int pixelsSpaceLeft = Convert.ToInt32(tbpSL.Text);
+            int pixelsSpaceRight = Convert.ToInt32(tbpSR.Text);
+
             if (_newFontImage != null)
             {
                 var result = MessageBox.Show("Esta opción eliminará los ajustes actuales. ¿Quieres continuar?",
@@ -538,21 +570,34 @@ namespace YakuzaGame.Files.Exe
                         GetMinPixel(bitmap,
                             new Rectangle(0, 2 * bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
 
-                    var trPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 0, bitmap.Width / 2, bitmap.Height / 3)));
-                    var mrPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
-                    var brPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap,
-                            new Rectangle(bitmap.Width / 2, 2 * bitmap.Height / 3, bitmap.Width / 2,
-                                bitmap.Height / 3)));
 
-                    _data[i][0] = (tlPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][1] = (bitmap.Width - (trPixel + pixelsSpace)) / (bitmap.Width / 2f);
-                    _data[i][2] = (mlPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][3] = (bitmap.Width - (mrPixel + pixelsSpace)) / (bitmap.Width / 2f);
-                    _data[i][4] = (blPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][5] = (bitmap.Width - (brPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    var trPixel = Math.Max(tlPixel + 2,
+                        GetMaxPixel(bitmap, new Rectangle(tlPixel + 1, 0, bitmap.Width / 2 + ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+                    var mrPixel = Math.Max(mlPixel + 1,
+                        GetMaxPixel(bitmap, new Rectangle(mlPixel + 1, bitmap.Height / 3, ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+                    var brPixel = Math.Max(blPixel + 1,
+                        GetMaxPixel(bitmap, new Rectangle(blPixel + 1, 2 * bitmap.Height / 3, ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+
+                    //var trPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 0, bitmap.Width / 2, bitmap.Height / 3)));
+                    //var mrPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
+                    //var brPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 2 * bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
+
+                    _data[i][0] = (tlPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][1] = (bitmap.Width - (trPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+                    _data[i][2] = (mlPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][3] = (bitmap.Width - (mrPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+                    _data[i][4] = (blPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][5] = (bitmap.Width - (brPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+
+                    //_data[i][0] = (tlPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][1] = (bitmap.Width - (trPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    //_data[i][2] = (mlPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][3] = (bitmap.Width - (mrPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    //_data[i][4] = (blPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][5] = (bitmap.Width - (brPixel + pixelsSpace)) / (bitmap.Width / 2f);
                 }
 
                 for (var i = 0x80; i < 0xA1; i++)
@@ -574,24 +619,36 @@ namespace YakuzaGame.Files.Exe
                     var mlPixel = Math.Min(bitmap.Width / 2,
                         GetMinPixel(bitmap, new Rectangle(0, bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
                     var blPixel = Math.Min(bitmap.Width / 2,
-                        GetMinPixel(bitmap,
-                            new Rectangle(0, 2 * bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
+                        GetMinPixel(bitmap, new Rectangle(0, 2 * bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
 
-                    var trPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 0, bitmap.Width / 2, bitmap.Height / 3)));
-                    var mrPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
-                    var brPixel = Math.Max(bitmap.Width / 2,
-                        GetMaxPixel(bitmap,
-                            new Rectangle(bitmap.Width / 2, 2 * bitmap.Height / 3, bitmap.Width / 2,
-                                bitmap.Height / 3)));
 
-                    _data[i][0] = (tlPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][1] = (bitmap.Width - (trPixel + pixelsSpace)) / (bitmap.Width / 2f);
-                    _data[i][2] = (mlPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][3] = (bitmap.Width - (mrPixel + pixelsSpace)) / (bitmap.Width / 2f);
-                    _data[i][4] = (blPixel - pixelsSpace) / (bitmap.Width / 2f);
-                    _data[i][5] = (bitmap.Width - (brPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    var trPixel = Math.Max(tlPixel + 2,
+                        GetMaxPixel(bitmap, new Rectangle(tlPixel + 1, 0, bitmap.Width / 2 + ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+                    var mrPixel = Math.Max(mlPixel + 1,
+                        GetMaxPixel(bitmap, new Rectangle(mlPixel + 1, bitmap.Height / 3, ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+                    var brPixel = Math.Max(blPixel + 1,
+                        GetMaxPixel(bitmap, new Rectangle(blPixel + 1, 2 * bitmap.Height / 3, ((bitmap.Width / 2) - tlPixel + 1), bitmap.Height / 3)));
+
+                    //var trPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 0, bitmap.Width / 2, bitmap.Height / 3)));
+                    //var mrPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
+                    //var brPixel = Math.Max(bitmap.Width / 2,
+                    //    GetMaxPixel(bitmap, new Rectangle(bitmap.Width / 2, 2 * bitmap.Height / 3, bitmap.Width / 2, bitmap.Height / 3)));
+
+                    _data[i][0] = (tlPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][1] = (bitmap.Width - (trPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+                    _data[i][2] = (mlPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][3] = (bitmap.Width - (mrPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+                    _data[i][4] = (blPixel - pixelsSpaceLeft) / (bitmap.Width / 2f);
+                    _data[i][5] = (bitmap.Width - (brPixel + pixelsSpaceRight)) / (bitmap.Width / 2f);
+
+                    //_data[i][0] = (tlPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][1] = (bitmap.Width - (trPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    //_data[i][2] = (mlPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][3] = (bitmap.Width - (mrPixel + pixelsSpace)) / (bitmap.Width / 2f);
+                    //_data[i][4] = (blPixel - pixelsSpace) / (bitmap.Width / 2f);
+                    //_data[i][5] = (bitmap.Width - (brPixel + pixelsSpace)) / (bitmap.Width / 2f);
                 }
 
                 FontCharsGridView.Invalidate();
@@ -606,7 +663,7 @@ namespace YakuzaGame.Files.Exe
 
             for (var y = zone.Y; y < zone.Y + zone.Height; y++)
             {
-                for (var x = zone.X; x < zone.X + zone.Width; x++)
+                for (var x = zone.X; x < bitmap.Width; x++)
                 {
                     if (bitmap.GetPixel(x, y) != Color.FromArgb(0, 0, 0, 0))
                     {
@@ -615,6 +672,18 @@ namespace YakuzaGame.Files.Exe
                     }
                 }
             }
+
+            //for (var y = zone.Y; y < zone.Y + zone.Height; y++)
+            //{
+            //    for (var x = zone.X; x < zone.X + zone.Width; x++)
+            //    {
+            //        if (bitmap.GetPixel(x, y) != Color.FromArgb(0, 0, 0, 0))
+            //        {
+            //            result = Math.Min(result, x);
+            //            break;
+            //        }
+            //    }
+            //}
 
             return result;
         }
@@ -625,7 +694,7 @@ namespace YakuzaGame.Files.Exe
 
             for (var y = zone.Y; y < zone.Y + zone.Height; y++)
             {
-                for (var x = zone.X + zone.Width - 1; x >= zone.X; x--)
+                for (var x = bitmap.Width - 1; x >= zone.X; x--)
                 {
                     if (bitmap.GetPixel(x, y) != Color.FromArgb(0, 0, 0, 0))
                     {
@@ -633,6 +702,15 @@ namespace YakuzaGame.Files.Exe
                         break;
                     }
                 }
+
+                //for (var x = zone.X + zone.Width - 1; x >= zone.X; x--)
+                //{
+                //    if (bitmap.GetPixel(x, y) != Color.FromArgb(0, 0, 0, 0))
+                //    {
+                //        result = Math.Max(result, x);
+                //        break;
+                //    }
+                //}
             }
 
             return result;

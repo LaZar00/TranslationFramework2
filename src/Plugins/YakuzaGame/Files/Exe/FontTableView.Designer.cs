@@ -39,6 +39,10 @@ namespace YakuzaGame.Files.Exe
             this.imgBoxOriginalChar = new Cyotek.Windows.Forms.ImageBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLoadOriginalFont = new System.Windows.Forms.Button();
+            this.tbpSR = new System.Windows.Forms.TextBox();
+            this.tbpSL = new System.Windows.Forms.TextBox();
+            this.lblSR = new System.Windows.Forms.Label();
+            this.lblSL = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -69,6 +73,10 @@ namespace YakuzaGame.Files.Exe
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.tbpSR);
+            this.splitContainer1.Panel2.Controls.Add(this.tbpSL);
+            this.splitContainer1.Panel2.Controls.Add(this.lblSR);
+            this.splitContainer1.Panel2.Controls.Add(this.lblSL);
             this.splitContainer1.Panel2.Controls.Add(this.btnAutoAdjust);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.txtTest);
@@ -98,6 +106,40 @@ namespace YakuzaGame.Files.Exe
             this.FontCharsGridView.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.FontCharsGridView_CellValueNeeded);
             this.FontCharsGridView.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.FontCharsGridView_CellValuePushed);
             this.FontCharsGridView.SelectionChanged += new System.EventHandler(this.FontCharsGridView_SelectionChanged);
+            // 
+            // tbpSR
+            // 
+            this.tbpSR.Location = new System.Drawing.Point(340, 15);
+            this.tbpSR.MaxLength = 1;
+            this.tbpSR.Name = "tbpSR";
+            this.tbpSR.Size = new System.Drawing.Size(47, 20);
+            this.tbpSR.TabIndex = 13;
+            this.tbpSR.Text = "2";
+            // 
+            // tbpSL
+            // 
+            this.tbpSL.Location = new System.Drawing.Point(240, 14);
+            this.tbpSL.MaxLength = 1;
+            this.tbpSL.Name = "tbpSL";
+            this.tbpSL.Size = new System.Drawing.Size(47, 20);
+            this.tbpSL.TabIndex = 13;
+            this.tbpSL.Text = "2";
+            // 
+            // lblSR
+            // 
+            this.lblSR.Location = new System.Drawing.Point(308, 18);
+            this.lblSR.Name = "lblSR";
+            this.lblSR.Size = new System.Drawing.Size(32, 23);
+            this.lblSR.TabIndex = 14;
+            this.lblSR.Text = "Right";
+            // 
+            // lblSL
+            // 
+            this.lblSL.Location = new System.Drawing.Point(162, 18);
+            this.lblSL.Name = "lblSL";
+            this.lblSL.Size = new System.Drawing.Size(81, 23);
+            this.lblSL.TabIndex = 15;
+            this.lblSL.Text = "pixelSpace Left";
             // 
             // btnAutoAdjust
             // 
@@ -135,12 +177,12 @@ namespace YakuzaGame.Files.Exe
             // 
             this.imgBoxNewChar.AllowFreePan = false;
             this.imgBoxNewChar.AllowZoom = false;
-            this.imgBoxNewChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.None;
+            this.imgBoxNewChar.AutoPan = false;
             this.imgBoxNewChar.BackColor = System.Drawing.Color.Black;
             this.imgBoxNewChar.GridDisplayMode = Cyotek.Windows.Forms.ImageBoxGridDisplayMode.None;
             this.imgBoxNewChar.Location = new System.Drawing.Point(393, 41);
             this.imgBoxNewChar.Name = "imgBoxNewChar";
-            this.imgBoxNewChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.Middle;
+            this.imgBoxNewChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.None;
             this.imgBoxNewChar.PixelGridColor = System.Drawing.Color.DarkRed;
             this.imgBoxNewChar.PixelGridThreshold = 1;
             this.imgBoxNewChar.ShowPixelGrid = true;
@@ -163,7 +205,7 @@ namespace YakuzaGame.Files.Exe
             // 
             this.imgBoxOriginalChar.AllowFreePan = false;
             this.imgBoxOriginalChar.AllowZoom = false;
-            this.imgBoxNewChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.None;
+            this.imgBoxOriginalChar.AutoPan = false;
             this.imgBoxOriginalChar.BackColor = System.Drawing.Color.Black;
             this.imgBoxOriginalChar.GridDisplayMode = Cyotek.Windows.Forms.ImageBoxGridDisplayMode.None;
             this.imgBoxOriginalChar.Location = new System.Drawing.Point(3, 41);
@@ -239,5 +281,9 @@ namespace YakuzaGame.Files.Exe
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTest;
         private System.Windows.Forms.Button btnAutoAdjust;
+        private System.Windows.Forms.TextBox tbpSR;
+        private System.Windows.Forms.TextBox tbpSL;
+        private System.Windows.Forms.Label lblSR;
+        private System.Windows.Forms.Label lblSL;
     }
 }
