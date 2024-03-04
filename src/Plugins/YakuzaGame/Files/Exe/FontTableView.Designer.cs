@@ -177,7 +177,7 @@ namespace YakuzaGame.Files.Exe
             // 
             this.imgBoxNewChar.AllowFreePan = false;
             this.imgBoxNewChar.AllowZoom = false;
-            this.imgBoxNewChar.AutoPan = false;
+            this.imgBoxNewChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.None;
             this.imgBoxNewChar.BackColor = System.Drawing.Color.Black;
             this.imgBoxNewChar.GridDisplayMode = Cyotek.Windows.Forms.ImageBoxGridDisplayMode.None;
             this.imgBoxNewChar.Location = new System.Drawing.Point(393, 41);
@@ -205,7 +205,7 @@ namespace YakuzaGame.Files.Exe
             // 
             this.imgBoxOriginalChar.AllowFreePan = false;
             this.imgBoxOriginalChar.AllowZoom = false;
-            this.imgBoxOriginalChar.AutoPan = false;
+            this.imgBoxOriginalChar.PanMode = Cyotek.Windows.Forms.ImageBoxPanMode.None;
             this.imgBoxOriginalChar.BackColor = System.Drawing.Color.Black;
             this.imgBoxOriginalChar.GridDisplayMode = Cyotek.Windows.Forms.ImageBoxGridDisplayMode.None;
             this.imgBoxOriginalChar.Location = new System.Drawing.Point(3, 41);
