@@ -11,20 +11,24 @@ namespace TFGame.Yakuza0
         private readonly System.Text.Encoding isoEncoding = GetEncoding("ISO-8859-1", EncoderFallback.ExceptionFallback, DecoderFallback.ReplacementFallback);
         private readonly System.Text.Encoding utf8Encoding = GetEncoding("UTF-8", EncoderFallback.ReplacementFallback, DecoderFallback.ExceptionFallback);
 
-        private List<Tuple<string, string>> DecodingReplacements;
-        private List<Tuple<string, string>> EncodingReplacements;
+        private readonly List<Tuple<string, string>> DecodingReplacements;
+        private readonly List<Tuple<string, string>> EncodingReplacements;
 
         public Encoding() : base()
         {
             DecodingReplacements = new List<Tuple<string, string>>
             {
-                new Tuple<string, string>("⑮", "\u2665"),
-                new Tuple<string, string>("\\", "¥"),
-                new Tuple<string, string>("\u007F", "®"),
-                new Tuple<string, string>("^", "%"),
-                new Tuple<string, string>("~", "™"),
-                new Tuple<string, string>("\r", "\\r"),
                 new Tuple<string, string>("\n", "\\n"),
+                new Tuple<string, string>("\r", "\\r"),
+                new Tuple<string, string>("~", "™"),
+                new Tuple<string, string>("\u007F", "®"),
+                new Tuple<string, string>("\\", "¥"),
+                new Tuple<string, string>("¢", "\u2605"), // Estrella
+                new Tuple<string, string>("¤", "\u266A"), // Nota musical
+                new Tuple<string, string>("§", "\u2665"), // Corazón
+                new Tuple<string, string>("\u00B8", "\u221E"), // Infinito
+                new Tuple<string, string>("^", "%"),
+                new Tuple<string, string>("⑮", "\u2665"),
             };
 
             EncodingReplacements = new List<Tuple<string, string>>
@@ -32,14 +36,13 @@ namespace TFGame.Yakuza0
                 new Tuple<string, string>("\\n", "\n"),
                 new Tuple<string, string>("\\r", "\r"),
                 new Tuple<string, string>("™", "~"),
-                //new Tuple<string, string>("^", "%"),
                 new Tuple<string, string>("®", "\u007F"),
                 new Tuple<string, string>("¥", "\\"),
                 new Tuple<string, string>("\u2605", "¢"), // Estrella
                 new Tuple<string, string>("\u266A", "¤"), // Nota musical
                 new Tuple<string, string>("\u2665", "§"), // Corazón
                 new Tuple<string, string>("\u221E", "\u00B8"), // Infinito
-                new Tuple<string, string>("\uFF05", "^"), // Porcentaje
+                new Tuple<string, string>("%", "^"), // Porcentaje
                 new Tuple<string, string>("\u25B3", "tf1"), // Triángulo
                 new Tuple<string, string>("\u25CB", "tf2"), // Círculo
                 new Tuple<string, string>("\u25A1", "tf3"), // Cuadrado
@@ -89,9 +92,11 @@ namespace TFGame.Yakuza0
             // Triangulo = "tf1" 746631
             // Circulo = "tf2" 746632
             // Cuadrado = "tf3" 746633
+            // Estrella = "tf4" 746634 - Sin usar, se trata en las tuplas
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x31 }, new byte[] { 0xE2, 0x96, 0xB3 });
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x32 }, new byte[] { 0xE2, 0x97, 0x8B });
             FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x33 }, new byte[] { 0xE2, 0x96, 0xA1 });
+            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x34 }, new byte[] { 0xE2, 0x98, 0x85 });
 
             return result;
         }
