@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using TF.Core.Helpers;
@@ -18,31 +19,31 @@ namespace TFGame.Yakuza0
         {
             DecodingReplacements = new List<Tuple<string, string>>
             {
+                //new Tuple<string, string>("^", "%"),
+                new Tuple<string, string>("\\", "¥"),     // We need to put this here to avoid updating next encoding replacements
                 new Tuple<string, string>("\n", "\\n"),
                 new Tuple<string, string>("\r", "\\r"),
                 new Tuple<string, string>("~", "™"),
                 new Tuple<string, string>("\u007F", "®"),
-                new Tuple<string, string>("\\", "¥"),
                 new Tuple<string, string>("¢", "\u2605"), // Estrella
                 new Tuple<string, string>("¤", "\u266A"), // Nota musical
                 new Tuple<string, string>("§", "\u2665"), // Corazón
                 new Tuple<string, string>("\u00B8", "\u221E"), // Infinito
-                new Tuple<string, string>("^", "%"),
                 new Tuple<string, string>("⑮", "\u2665"),
             };
 
             EncodingReplacements = new List<Tuple<string, string>>
             {
+                //new Tuple<string, string>("%", "^"), // Porcentaje
                 new Tuple<string, string>("\\n", "\n"),
                 new Tuple<string, string>("\\r", "\r"),
+                new Tuple<string, string>("¥", "\\"),
                 new Tuple<string, string>("™", "~"),
                 new Tuple<string, string>("®", "\u007F"),
-                new Tuple<string, string>("¥", "\\"),
                 new Tuple<string, string>("\u2605", "¢"), // Estrella
                 new Tuple<string, string>("\u266A", "¤"), // Nota musical
                 new Tuple<string, string>("\u2665", "§"), // Corazón
                 new Tuple<string, string>("\u221E", "\u00B8"), // Infinito
-                new Tuple<string, string>("%", "^"), // Porcentaje
                 new Tuple<string, string>("\u25B3", "tf1"), // Triángulo
                 new Tuple<string, string>("\u25CB", "tf2"), // Círculo
                 new Tuple<string, string>("\u25A1", "tf3"), // Cuadrado
@@ -117,9 +118,12 @@ namespace TFGame.Yakuza0
         {
             var str = s;
 
-            foreach (var t in EncodingReplacements)
+            if (!string.IsNullOrEmpty(str) && str.Length > 1)
             {
-                str = str.Replace(t.Item1, t.Item2);
+                foreach (var t in EncodingReplacements)
+                {
+                    str = str.Replace(t.Item1, t.Item2);
+                }
             }
 
             return GetBytes(str.ToCharArray(), 0, str.Length);
@@ -169,9 +173,12 @@ namespace TFGame.Yakuza0
         {
             var str = new string(GetChars(bytes, index, count));
 
-            foreach (var t in DecodingReplacements)
+            if (!string.IsNullOrEmpty(str) && str.Length > 1)
             {
-                str = str.Replace(t.Item1, t.Item2);
+                foreach (var t in DecodingReplacements)
+                {
+                    str = str.Replace(t.Item1, t.Item2);
+                }
             }
 
             return str;
