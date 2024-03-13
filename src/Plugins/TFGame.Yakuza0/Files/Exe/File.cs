@@ -74,6 +74,7 @@ namespace TFGame.Yakuza0.Files.Exe
                     new Tuple<long, byte[]>(0xEB241C, new byte[] {(byte)'P', (byte)'I', (byte)'E', (byte)'R', (byte)'D', (byte)'E', (byte)'S'}),    // LOST (PIERDES)
                     new Tuple<long, byte[]>(0xE0C468, new byte[] {(byte)'N', (byte)'V'}),   // LV (NV)
                     new Tuple<long, byte[]>(0xE0C498, new byte[] {(byte)'I', (byte)'n', (byte)'f', (byte)'o', (byte)'r', (byte)'m', (byte)'a', (byte)'c', (byte)'i', (byte)'ó', (byte)'n' }),  // Information
+                    new Tuple<long, byte[]>(0xEB2BF0, new byte[] {(byte)'N', (byte)'º', (byte)' ' }),    // No. (Nº ) Cabaret Club
                 },
             },
         };

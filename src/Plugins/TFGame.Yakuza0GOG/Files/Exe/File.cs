@@ -73,10 +73,11 @@ namespace TFGame.Yakuza0GOG.Files.Exe
                 Enabled = false,
                 Patches = new List<Tuple<long, byte[]>>
                 {
-                    new Tuple<long, byte[]>(0xDD73C8, new byte[] {(byte)'C', (byte)'O', (byte)'G', (byte)'E', (byte)'S'}),   // GET (COGES)
-                    new Tuple<long, byte[]>(0xE69424, new byte[] {(byte)'P', (byte)'I', (byte)'E', (byte)'R', (byte)'D', (byte)'E', (byte)'S'}),    // LOST (PIERDES)
-                    new Tuple<long, byte[]>(0xDC5308, new byte[] {(byte)'N', (byte)'V'}),   // LV (NV)
-                    new Tuple<long, byte[]>(0xDC5338, new byte[] {(byte)'I', (byte)'n', (byte)'f', (byte)'o', (byte)'r', (byte)'m', (byte)'a', (byte)'c', (byte)'i', (byte)'ó', (byte)'n' }),  // Information
+                    new Tuple<long, byte[]>(0xDD73C8, new byte[] {(byte)'C', (byte)'O', (byte)'G', (byte)'E', (byte)'S'}),   // GET (COGES) Fights
+                    new Tuple<long, byte[]>(0xE69424, new byte[] {(byte)'P', (byte)'I', (byte)'E', (byte)'R', (byte)'D', (byte)'E', (byte)'S'}),    // LOST (PIERDES) Fights
+                    new Tuple<long, byte[]>(0xDC5308, new byte[] {(byte)'N', (byte)'V'}),   // LV (NV) Catfight
+                    new Tuple<long, byte[]>(0xDC5338, new byte[] {(byte)'I', (byte)'n', (byte)'f', (byte)'o', (byte)'r', (byte)'m', (byte)'a', (byte)'c', (byte)'i', (byte)'ó', (byte)'n' }),  // Information Catfight
+                    new Tuple<long, byte[]>(0xE69C00, new byte[] {(byte)'N', (byte)'º', (byte)' ' }),    // No. (Nº ) Cabaret Club
                 },
             },
         };
