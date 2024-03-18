@@ -90,30 +90,36 @@ namespace TFGame.Yakuza0
             }
 
             // Hack para los símbolos cuadrado, triángulo y círculo
-            // Triangulo = "tf1" 746631
-            // Circulo = "tf2" 746632
-            // Cuadrado = "tf3" 746633
-            // Estrella = "tf4" 746634 - Sin usar, se trata en las tuplas
-            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x31 }, new byte[] { 0xE2, 0x96, 0xB3 });
-            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x32 }, new byte[] { 0xE2, 0x97, 0x8B });
-            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x33 }, new byte[] { 0xE2, 0x96, 0xA1 });
-            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x34 }, new byte[] { 0xE2, 0x98, 0x85 });
+            // Triangulo = "tf1" 74663153
+            // Circulo = "tf2" 74663253
+            // Cuadrado = "tf3" 74663353
+            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x31 }, new byte[] { 0xE2, 0x96, 0xB3 }, 3);
+            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x32 }, new byte[] { 0xE2, 0x97, 0x8B }, 3);
+            FixPlaceholder(bytes, new byte[] { 0x74, 0x66, 0x33 }, new byte[] { 0xE2, 0x96, 0xA1 }, 3);
 
             return result;
         }
 
-        private void FixPlaceholder(byte[] input, byte[] oldBytes, byte[] newBytes)
+        private void FixPlaceholder(byte[] input, byte[] oldBytes, byte[] newBytes, int numchars)
         {
             var searchHelper = new SearchHelper(oldBytes);
             var placeholders = searchHelper.SearchAll(input);
             foreach (var placeholder in placeholders)
             {
-                input[placeholder] = newBytes[0];
-                input[placeholder + 1] = newBytes[1];
-                input[placeholder + 2] = newBytes[2];
+
+                if (input[placeholder + numchars] == '!') input[placeholder + numchars] = 0x1F;
+
+                while (numchars > 0)
+                {
+                    input[placeholder + numchars - 1] = newBytes[numchars - 1];
+                    numchars--;
+                }                
             }
         }
 
+        // UPDATED: Fix the hack in those situations where the next byte of Triangle/Circle/Square
+        //          is greater than 0x7F. This prevents to show incorrectly for example '¡'/'¿'/'É'
+        //          characters in some answers of Club Cabaret for example.
         public override byte[] GetBytes(string s)
         {
             var str = s;
@@ -122,7 +128,25 @@ namespace TFGame.Yakuza0
             {
                 foreach (var t in EncodingReplacements)
                 {
-                    str = str.Replace(t.Item1, t.Item2);
+                    if (t.Item2[0] == 't' && t.Item2[1] == 'f' && str.Length > 5)
+                    {
+                        int pos = str.IndexOf(t.Item1);
+
+                        if (pos >= 0 && str[pos + 1] > 0x7F)
+                        {
+                            // We need to put here a 0x1F, but right now, it is a string, so we will use a
+                            // comodin like '!', and replace it in FixPlaceholder procedure for 0x1F.
+                            str = str.Replace(t.Item1, t.Item2 + "!");
+                        }
+                        else
+                        {
+                            str = str.Replace(t.Item1, t.Item2);
+                        }
+                    }
+                    else
+                    {
+                        str = str.Replace(t.Item1, t.Item2);
+                    }                        
                 }
             }
 
