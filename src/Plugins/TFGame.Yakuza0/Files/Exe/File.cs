@@ -16,6 +16,7 @@ namespace TFGame.Yakuza0.Files.Exe
             new Tuple<long, long>(0xD2A740, 0xD2A740),
             new Tuple<long, long>(0xD2C658, 0xD2D520),
             new Tuple<long, long>(0xD2F9E8, 0xD2FA80),
+            new Tuple<long, long>(0xD69000, 0xD69000),  // Guard (in Keyboard Customization of Settings)
             new Tuple<long, long>(0xD693EC, 0xD693EC),  // Custom
             new Tuple<long, long>(0xDC9138, 0xDC9170),  // Windowed / Borderless / Fullscreen
             new Tuple<long, long>(0xDC9770, 0xDC97A0),  // Enabled / Off / Disabled
