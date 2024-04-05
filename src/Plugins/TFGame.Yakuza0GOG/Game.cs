@@ -428,10 +428,20 @@ namespace TFGame.Yakuza0GOG
                 new GameFileSearch
                 {
                     RelativePath = ".",
-                    SearchPattern = "extra.bin_c;tougijyo_mode.bin_c;tougijyo_participant.bin_c;tougijyo_string.bin_c",
+                    SearchPattern = "extra.bin_c;complete_minigame.bin_c;tougijyo_mode.bin_c;tougijyo_participant.bin_c;tougijyo_string.bin_c",
                     IsWildcard = true,
                     RecursiveSearch = false,
                     FileType = typeof(YakuzaGame.Files.Table.File)
+                };
+
+            var shopeatSearch =
+                new GameFileSearch
+                {
+                    RelativePath = ".",
+                    SearchPattern = "complete_shopeat.bin_c",
+                    IsWildcard = false,
+                    RecursiveSearch = false,
+                    FileType = typeof(YakuzaGame.Files.ShopEat.File)
                 };
 
             ddsSearch =
@@ -445,6 +455,7 @@ namespace TFGame.Yakuza0GOG
                 };
 
             pause.FileSearches.Add(tableSearch);
+            pause.FileSearches.Add(shopeatSearch);
             pause.FileSearches.Add(ddsSearch);
 
             ddsSearch =
@@ -602,7 +613,7 @@ namespace TFGame.Yakuza0GOG
                 {
                     RelativePath = ".",
                     SearchPattern =
-                        "activity_list.bin_c;battle_result.bin_c;caba_cast_info.bin_c;cabaret_island_area.bin_c;cabaret_island_shop.bin_c;controller_explain.bin_c;correlation_person.bin_c;money_island_shop.bin_c;money_island_tarent.bin_c;search_arms_agent.bin_c;search_arms_kind.bin_c;search_arms_location.bin_c;search_arms_result_picture.bin_c;tougijyo_realtime_quest.bin_c;tougijyo_regulation_set.bin_c;tutorial.bin_c;ultimate.bin_c;virtue_shop.bin_c;",
+                        "activity_list.bin_c;battle_result.bin_c;caba_cast_info.bin_c;cabaret_island_area.bin_c;cabaret_island_shop.bin_c;controller_explain.bin_c;correlation_person.bin_c;money_island_shop.bin_c;money_island_tarent.bin_c;response_roulette.bin_c;search_arms_agent.bin_c;search_arms_kind.bin_c;search_arms_location.bin_c;search_arms_result_picture.bin_c;tougijyo_realtime_quest.bin_c;tougijyo_regulation_set.bin_c;tutorial.bin_c;ultimate.bin_c;virtue_shop.bin_c;",
                     IsWildcard = true,
                     RecursiveSearch = false,
                     FileType = typeof(YakuzaGame.Files.Table.File)
