@@ -182,6 +182,7 @@
     <Compile Include="Files\PacFile.cs" />
     <Compile Include="Files\ScenarY0\File.cs" />
     <Compile Include="Files\Scenario\File.cs" />
+    <Compile Include="Files\ShopEat\File.cs" />
     <Compile Include="Files\UIParFile.cs" />
     <Compile Include="Files\ParFile.cs" />
     <Compile Include="Files\PocketCircuit\File.cs" />
