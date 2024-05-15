@@ -1,12 +1,16 @@
 # TranslationFramework2
-Translation Framework 2 es una aplicación para facilitar la traducción de diferentes juegos.
+Translation Framework 2 es una aplicación para facilitar la traducción de diferentes juegos. El creador de esta aplicación es Kaplas.
+En mi humilde intervención, lo único que he hecho es actualizar y mejorar los Plugins de Yakuza 0 y Yakuza Kiwami para permitir la versión GOG (aparte de la de Steam).
 
-**IMPORTANTE: Esta aplicación ya no va a recibir más actualizaciones ni correcciones de errores. La nueva versión es [TF3](https://github.com/Kaplas80/TF3).**
+**IMPORTANTE: Esta aplicación ya no va a recibir más actualizaciones ni correcciones de errores por parte del autor original Kaplas. La nueva versión es [TF3](https://github.com/Kaplas80/TF3).**
 
-**IMPORTANT: This app won't get more updates or bugfixes. The new app is [TF3](https://github.com/Kaplas80/TF3).**
+**IMPORTANT: This app won't get more updates or bugfixes by its author, Kaplas. The new app is [TF3](https://github.com/Kaplas80/TF3).**
+
+In any case, I will give some minimum support to Yakuza 0 and Yakuza Kiwami plugins for GOG version as needed.
 
 ## Descarga
 Si no sabes (o no quieres) compilar desde el código fuente, en [este enlace](https://mega.nz/#F!GZNQWSBQ!JA42-HIGTy79O0I7is0FGw) se puede descargar la versión estable compilada.
+**IMPORTANTE: Esta versión NO contiene actualizados los plugins de Yakuza 0 y Yakuza Kiwami para la versión GOG**
 
 ## ¿Cómo funciona?
 Al crear una nueva traducción, la aplicación pide al usuario el juego que quiere traducir y la carpeta en la que está instalado. Una vez hecho esto, la aplicación se encarga de buscar y descomprimir (si es necesario) los ficheros con texto para que el usuario solo se tenga que centrar en la traducción.
@@ -19,11 +23,13 @@ Cuando el usuario termina la traducción, la aplicación reconstruye los fichero
   - Reemplazo de texturas.
   - Reemplazo de fuentes.
   - Parche para usar codificación de 1 byte en lugar de Shift-JIS.
+  - Soporta la versión Steam/GOG
 * [Yakuza Kiwami](http://www.clandlan.net/foros/topic/80616-yakuza-kiwami-en-espanol/)
   - Traducción de textos.
   - Reemplazo de texturas.
   - Reemplazo de fuentes.
   - Parche para usar codificación de 1 byte en lugar de Shift-JIS.
+  - Soporta la versión Steam/GOG
 * [Ryū ga Gotoku Ishin! (PS3)](https://discord.gg/6hDTRcR)
   - Traducción de textos. (Soporte parcial)
 * [Shining Resonance Refrain](http://www.clandlan.net/foros/topic/80154-traduccion-shining-resonance-refrain-en-proceso/)
