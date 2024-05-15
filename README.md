@@ -3,9 +3,9 @@ Translation Framework 2 es una aplicación para facilitar la traducción de dife
 En mi humilde intervención, lo único que he hecho es actualizar y mejorar los Plugins de Yakuza 0 y Yakuza Kiwami para permitir la versión GOG (aparte de la de Steam).
 
 **IMPORTANTE: Esta aplicación ya no va a recibir más actualizaciones ni correcciones de errores por parte del autor original Kaplas. La nueva versión es [TF3](https://github.com/Kaplas80/TF3).**
+En cualquier caso, daré un soporte mínimo a los plugins del Yakuza 0 y Yakuza Kiwami para la versión GOG si lo considero necesario.
 
 **IMPORTANT: This app won't get more updates or bugfixes by its author, Kaplas. The new app is [TF3](https://github.com/Kaplas80/TF3).**
-
 In any case, I will give some minimum support to Yakuza 0 and Yakuza Kiwami plugins for GOG version as needed.
 
 ## Descarga
